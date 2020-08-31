@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/erinkelsey/createreactapp-docker.svg?branch=master)](https://travis-ci.com/erinkelsey/createreactapp-docker)
 
-Basic Create React App application within a Docker container.
+Basic Create React App with Docker, Travis CI and AWS Elastic Beanstalk for CI/CD and hosting.
 
 Hosted example here: http://createreactappdocker-env.eba-phw39rwj.ca-central-1.elasticbeanstalk.com
 
@@ -41,12 +41,38 @@ This will put a bookmark on the node_modules folder (won't map it to anything el
 
 ## Production
 
-### Build
+### Build with Docker CLI
 
     $ docker build .
 
-### Run
+### Run with Docker CLI
 
     $ docker run -p 8080:80 <container_id>
 
 NOTE: nginx default port is 80
+
+## Setup for CI/CD and Deployment to AWS
+
+### AWS ElasticBeanstalk
+
+Create a new application and environment with any name.
+
+Select 'Docker' as the Platform.
+
+Select 'Sample application' for Application Code.
+
+### Travis CI
+
+Make sure that your GitHub repository is public, and that Travis CI is configured to access it.
+
+Create the following environment variables:
+
+- AWS_ACCESS_KEY -> Your AWS IAM Access Key with permissions for Elastic Beanstalk
+- AWS_SECRET_KEY -> Your AWS IAM Secret Key with permissions for Elastic Beanstalk
+- AWS_REGION -> Region of your AWS Elastic Beanstalk application
+- AWS_APP_NAME -> AWS Elastic Beanstalk application name
+- AWS_ENV_NAME -> AWS Elastic Beanstalk environment name
+- AWS_BUCKET_NAME -> AWS S3 bucket name where application is stored (check logs when environment is created for name)
+- AWS_BUCKET_PATH -> The folder in the AWS S3 holder your application (usually the same as AWS_APP_NAME)
+
+NOTE: Deployment to AWS is only triggered when a pull request or commit is made to master branch on GitHub
