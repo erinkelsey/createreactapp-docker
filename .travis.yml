@@ -10,3 +10,15 @@ before_install:
 
 script:
   - docker run -e CI=true temp_container npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: $AWS_REGION
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  app: "createreactapp-docker"
+  env: "CreatereactappDocker-env"
+  bucket_name: "elasticbeanstalk-ca-central-1-210133992526"
+  bucket_path: "createreactapp-docker"
+  on:
+    branch: master
