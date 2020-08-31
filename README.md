@@ -1,10 +1,8 @@
-# React Frontend
+# Create React App run with Docker on AWS Elastic Beanstalk
 
 [![Build Status](https://travis-ci.com/erinkelsey/createreactapp-docker.svg?branch=master)](https://travis-ci.com/erinkelsey/createreactapp-docker)
 
 Basic Create React App with Docker, Travis CI and AWS Elastic Beanstalk for CI/CD and hosting.
-
-Hosted example here: http://createreactappdocker-env.eba-phw39rwj.ca-central-1.elasticbeanstalk.com
 
 ## Development
 
