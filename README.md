@@ -1,5 +1,7 @@
 # React Frontend
 
+[![Build Status](https://travis-ci.com/erinkelsey/createreactapp-docker.svg?branch=master)](https://travis-ci.com/erinkelsey/createreactapp-docker)
+
 Basic Create React App application within a Docker container.
 
 Hosted example here:
