@@ -4,7 +4,7 @@
 
 Basic Create React App application within a Docker container.
 
-Hosted example here:
+Hosted example here: http://createreactappdocker-env.eba-phw39rwj.ca-central-1.elasticbeanstalk.com
 
 ## Development
 
