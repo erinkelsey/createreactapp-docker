@@ -14,9 +14,9 @@ deploy:
   region: $AWS_REGION
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  app: "createreactapp-docker"
-  env: "CreatereactappDocker-env"
-  bucket_name: "elasticbeanstalk-ca-central-1-210133992526"
-  bucket_path: "createreactapp-docker"
+  app: $AWS_APP_NAME
+  env: $AWS_ENV_NAME
+  bucket_name: $AWS_BUCKET_NAME
+  bucket_path: $AWS_BUCKET_PATH
   on:
     branch: master
